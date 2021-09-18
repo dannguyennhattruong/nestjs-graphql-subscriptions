@@ -1,0 +1,37 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreatePersonInput {
+  name: String!
+}
+
+input ListPersonInput {
+  _id: String
+  name: String
+}
+
+type Mutation {
+  createPerson(payload: CreatePersonInput!): Person!
+  deletePerson(_id: String!): Person!
+  updatePerson(payload: UpdatePersonInput!): Person!
+}
+
+type Person {
+  _id: String!
+  name: String!
+}
+
+type Query {
+  person(_id: String!): Person!
+  persons(filters: ListPersonInput): [Person!]!
+}
+
+type Subscription {
+  personAdded: Person!
+}
+
+input UpdatePersonInput {
+  _id: String!
+  name: String
+}
